@@ -27,7 +27,7 @@ EOF
 resource "aws_instance" "two" {
   ami             = "ami-0d81306eddc614a45"
   instance_type   = "t2.micro"
-  key_name        = "rrraham"
+  key_name        = "my_keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1b"
   user_data       = <<EOF
@@ -44,7 +44,7 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-0d81306eddc614a45"
+  ami             = "ami-06fc49795bc410a0c"
   instance_type   = "t2.micro"
   key_name        = "rrraham"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -55,7 +55,7 @@ resource "aws_instance" "three" {
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-0d81306eddc614a45"
+  ami             = "ami-06fc49795bc410a0c"
   instance_type   = "t2.micro"
   key_name        = "rrraham"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -90,11 +90,11 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "rahamshaikterra77889900"
+  bucket = "anils3123"
 }
 
 resource "aws_iam_user" "seven" {
-name = "rahamuser11" 
+name = "project-user" 
 }
 
 resource "aws_ebs_volume" "eight" {
